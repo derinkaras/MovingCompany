@@ -69,6 +69,9 @@ const Home = () => {
                     With years of hands-on experience and thousands of successful moves, MovingBucks has built a reputation for reliability, professionalism, and unbeatable value. Whether you’re relocating within your city, across provinces, or anywhere in North America, we make the process smooth, affordable, and stress-free — starting from Edmonton and Calgary.
                 </p>
             </div>
+            <div className="mb-6">
+                <CompanyGallery/>
+            </div>
             {/* Features Section */}
             <div
                 ref={featuresRef}
@@ -159,10 +162,6 @@ const Home = () => {
                 </div>
             </div>
             <TestimonialsCarousel />
-            <div className="mb-6">
-                <CompanyGallery/>
-            </div>
-
 
         </>
     );

@@ -3,19 +3,21 @@ import images from "../../constants/images.js";
 
 const Footer = () => {
     return (
-        <footer className="relative text-white min-h-[400px] flex flex-col justify-end">
+        <footer className="relative text-white flex flex-col justify-end overflow-hidden min-h-[400px] lg:min-h-[500px] xl:min-h-[550px]">
             {/* Background Image */}
             <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${images.companyImg1})` }}
+                className="absolute inset-0 bg-no-repeat bg-center bg-cover"
+                style={{
+                    backgroundImage: `url(${images.inAction7})`,
+                }}
             >
                 <div className="absolute inset-0 bg-black opacity-60" />
             </div>
 
             {/* All Content Area */}
-            <div className="relative z-10 w-full">
+            <div className="relative z-10 w-full pt-12 pb-6">
                 {/* Grid Content */}
-                <div className="px-6 py-12 max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+                <div className="px-6 max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
                     {/* Edmonton */}
                     <div>
                         <h3 className="font-bold mb-2">Edmonton</h3>
@@ -35,7 +37,7 @@ const Footer = () => {
                         <p className="mt-2">403 906 3446</p>
                     </div>
 
-                    {/* Hours */}
+                    {/* Hours + Socials */}
                     <div>
                         <h3 className="font-bold mb-2">Hours</h3>
                         <p>Mon-Fri: 8:30 AM – 5:00 PM</p>
@@ -44,11 +46,11 @@ const Footer = () => {
 
                         <h3 className="font-bold mt-4">Connect With Us</h3>
                         <div className="flex space-x-2 mt-2">
-                            <div className="w-6 h-6 bg-white text-black rounded-full text-center">F</div>
-                            <div className="w-6 h-6 bg-white text-black rounded-full text-center">I</div>
-                            <div className="w-6 h-6 bg-white text-black rounded-full text-center">G</div>
-                            <div className="w-6 h-6 bg-white text-black rounded-full text-center">Y</div>
-                            <div className="w-6 h-6 bg-white text-black rounded-full text-center">T</div>
+                            {["F", "I", "G", "Y", "T"].map((char) => (
+                                <div key={char} className="w-6 h-6 bg-white text-black rounded-full text-center leading-6">
+                                    {char}
+                                </div>
+                            ))}
                         </div>
                     </div>
 
@@ -67,7 +69,7 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Row */}
-                <div className="text-center text-xs text-gray-300 py-4 border-t border-gray-700">
+                <div className="text-center text-xs text-gray-300 pt-6 border-t border-gray-700 mt-10">
                     Copyright MovingBucks 2025 —
                     <a href="#" className="hover:underline ml-1">Privacy Policy</a> •
                     <a href="#" className="hover:underline ml-1">Terms and Conditions</a> •

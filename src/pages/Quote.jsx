@@ -135,11 +135,11 @@ const Quote = () => {
     return (
         <div className="max-w-4xl mx-auto px-4 py-12">
             <h1 className="text-3xl font-bold text-center text-green-700 mb-4">Your Eager Beaver Moving Experience Starts Here</h1>
-            <div className="flex justify-center gap-4 mb-6">
-                <a href="tel:780-123-4567" className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold">
+            <div className="flex justify-center items-center gap-4 mb-6">
+                <a href="tel:780-270-1761" className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold text-center">
                     {isMobile ? "Call Edmonton 780-270-1761" : "Click to Call Edmonton Office"}
                 </a>
-                <a href="tel:403-987-6543" className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold">
+                <a href="tel:780-270-1761" className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold text-center">
                     {isMobile ? "Call Calgary 780-270-1761" : "Click to Call Calgary Office"}
                 </a>
             </div>
