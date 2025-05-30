@@ -74,6 +74,7 @@ const Quote = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
         setFormSubmitted(true);
     };
 
