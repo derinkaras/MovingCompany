@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/ringtail-sans-serif-personal-use");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/estellothy");
+@import url("https://fonts.cdnfonts.com/css/san-marino-beach");
+@import "tailwindcss";
+
+/* Theme Custom Variables */
+@theme {
+    --color-primary: #1f2937;
+    --color-button: #08cf65;
+    --color-background-secondary: #ebf5f3;
+}
+
+/* Custom Fonts + Styles */
+.cta-title {
+    font-family: "Estellothy", cursive;
+    font-size: 80px;
+    color: #ffd041;
+}
+
+/* Fade-up animation */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dot pulse animation */
+@keyframes dotPulse {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+}
+
+.dot {
+    animation: dotPulse 1.4s ease-in-out infinite;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.dot:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+/* Truck animations */
+@keyframes truckEnter {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes truckBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Default truck state */
+.truck-wrapper {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Trigger animation only when scrolled into view */
+.truck-wrapper.visible {
+    animation: truckEnter 1s ease-out forwards, truckBounce 0.6s ease-in-out 1s infinite;
+}
+
+
+
+/*Card animations*/
+@keyframes fadeLiftZoom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.card-animated {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.card-animated.visible {
+    animation: fadeLiftZoom 0.8s ease-out forwards;
+}
+
+/* Card Hover Effect */
+.card-animated:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px) scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+
+
+/*Carousel Animations*/
+
+/* Section scroll-in animation */
+@keyframes slideFadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.carousel-visible {
+    animation: slideFadeUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* Card slide animation */
+.carousel-transition {
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+/* Arrow button pulse on click */
+.arrow-button:active {
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+}
