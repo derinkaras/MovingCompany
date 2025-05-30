@@ -77,6 +77,7 @@ const Home = () => {
                 ref={featuresRef}
                 className={`bg-white py-10 px-6 fade-up ${featuresVisible ? 'visible' : ''}`}
             >
+
                 <div className="text-center mb-12">
                     <h2 className="text-4xl sm:text-5xl font-bold text-primary">
                         6 Reasons People Choose MovingBucks
@@ -118,7 +119,7 @@ const Home = () => {
                     ].map(({ title, desc, icon }, idx) => (
                         <div
                             key={idx}
-                            className={`card-animated bg-background-secondary p-6 rounded-lg shadow-lg text-center flex flex-col items-center justify-center ${featuresVisible ? 'visible' : ''}`}
+                            className={`fade-up bg-background-secondary p-6 rounded-lg shadow-lg text-center flex flex-col items-center justify-center ${featuresVisible ? 'visible' : ''}`}
                             style={{ animationDelay: `${idx * 0.15}s`, animationFillMode: "forwards" }}
                         >
                             <img src = {icon} className="size-24 mb-4" />

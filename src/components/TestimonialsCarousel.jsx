@@ -1,40 +1,28 @@
-// Add this TestimonialsCarousel section inside your Home component, ideally below your Achievements section
-
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
-
+import useScrollFadeUp from "../../hooks/useScrollFadeUp";
 
 const step = 3;
 
 const reviews = [
-    { name: "Rachel P.", text: "MovingBucks made our cross-province move completely stress-free. The team was on time, courteous, and handled everything with incredible care. It’s rare to find service this professional and affordable. Highly recommend!" },
-    { name: "Jordan L.", text: "From the first quote to the last box being unloaded, MovingBucks exceeded our expectations. The crew was efficient, friendly, and treated our belongings like their own. We won’t use anyone else." },
-    { name: "Alicia M.", text: "I’ve moved five times in the last ten years and this was hands-down the smoothest experience. Great communication, no hidden costs, and a hardworking crew who actually cared. Thank you, MovingBucks!" },
-    { name: "Kevin D.", text: "As a single parent, I was dreading the hassle of moving. But MovingBucks handled every detail — even helping with setup! They truly go above and beyond. Worth every penny." },
-    { name: "Fatima R.", text: "The team showed up early, worked non-stop, and finished the job ahead of schedule. No damage, no stress, just pure professionalism. These guys are the real deal." },
-    { name: "Liam S.", text: "Honestly blown away. The quote was fast and fair, and the crew treated our furniture like it was their own. Smoothest move we’ve ever had." },
-    { name: "Nora K.", text: "From the first call to the last box, MovingBucks made the entire process easy. Super responsive, super respectful, and super efficient." },
-    { name: "Dylan M.", text: "MovingBucks didn’t just move us — they moved us with care. Everything arrived in perfect condition and the price was exactly as quoted." },
-    { name: "Amira B.", text: "Professional, polite, and prepared. These movers are a rare find. My family and I will definitely be using MovingBucks again." },
-    { name: "Ethan J.", text: "They made our office relocation seamless. Zero downtime, everything was labeled and organized. Great team and great execution!" },
-    { name: "Sasha V.", text: "I was nervous about hiring movers, but MovingBucks proved me wrong. Punctual, professional, and so kind. Best money I’ve spent all year." },
-    { name: "Marcus C.", text: "They wrapped every item like it was a museum piece. No scratches, no stress. Just good people doing great work. Would 100% recommend." }
+    { name: "Rachel P.", text: "MovingBucks made our cross-province move completely stress-free..." },
+    { name: "Jordan L.", text: "From the first quote to the last box being unloaded..." },
+    { name: "Alicia M.", text: "I’ve moved five times in the last ten years..." },
+    { name: "Kevin D.", text: "As a single parent, I was dreading the hassle of moving..." },
+    { name: "Fatima R.", text: "The team showed up early, worked non-stop..." },
+    { name: "Liam S.", text: "Honestly blown away. The quote was fast and fair..." },
+    { name: "Nora K.", text: "From the first call to the last box..." },
+    { name: "Dylan M.", text: "MovingBucks didn’t just move us — they moved us with care..." },
+    { name: "Amira B.", text: "Professional, polite, and prepared..." },
+    { name: "Ethan J.", text: "They made our office relocation seamless..." },
+    { name: "Sasha V.", text: "I was nervous about hiring movers, but..." },
+    { name: "Marcus C.", text: "They wrapped every item like it was a museum piece..." }
 ];
 
 const TestimonialsCarousel = () => {
     const [startIndex, setStartIndex] = useState(0);
     const [animateIndex, setAnimateIndex] = useState(0);
-    const sectionRef = useRef(null);
-    const [inView, setInView] = useState(false);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) setInView(true);
-        }, { threshold: 0.1 });
-
-        if (sectionRef.current) observer.observe(sectionRef.current);
-        return () => observer.disconnect();
-    }, []);
+    const [sectionRef, isVisible] = useScrollFadeUp();
 
     const prev = () => {
         setStartIndex((prev) => (prev - step + reviews.length) % reviews.length);
@@ -54,7 +42,7 @@ const TestimonialsCarousel = () => {
     return (
         <div
             ref={sectionRef}
-            className={`py-20 px-6 bg-white ${inView ? 'carousel-visible' : ''}`}
+            className={`py-20 px-6 bg-white fade-up ${isVisible ? 'visible' : ''}`}
         >
             <div className="text-center mb-10">
                 <h2 className="text-4xl font-extrabold text-primary uppercase tracking-wide">
