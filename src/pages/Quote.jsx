@@ -188,10 +188,11 @@ const Quote = () => {
                         min={todayStr}
                         value={formData.moveDate}
                         onChange={handleChange}
-                        className="w-full p-2 border rounded bg-white"
+                        className="w-full p-2 border rounded bg-white appearance-none font-sans"
                         required
                     />
                 </div>
+
 
                 <div>
                     <label className="block font-semibold mb-1">Moving Size</label>
