@@ -70,12 +70,12 @@ const About = () => {
                     <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
                         Contact our friendly team for a free, no-obligation quote. Whether it's a local move or long-distance, MovingBucks is here to handle it with care and confidence.
                     </p>
-                    <link
+                    <Link
                         to="/Quote"
                         className="inline-block bg-green-600 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-green-700 transition"
                     >
                         Get Your Quote
-                    </link>
+                    </Link>
                 </div>
             </div>
         </div>
