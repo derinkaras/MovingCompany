@@ -153,20 +153,33 @@ const Quote = () => {
     return (
         <div className="max-w-4xl mx-auto px-4 py-12">
             <h1 className="text-3xl font-bold text-center text-green-700 mb-4">Let’s Get You Moving the Right Way</h1>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mb-6">
-                <a
-                    href="tel:780-270-1761"
-                    className="bg-green-600 text-white px-4 py-2 rounded-full font-semibold text-sm sm:text-base text-center w-full sm:w-[220px]"
-                >
-                    📞 Tap to Call Edmonton
-                </a>
-                <a
-                    href="tel:780-270-1761"
-                    className="bg-green-600 text-white px-4 py-2 rounded-full font-semibold text-sm sm:text-base text-center w-full sm:w-[220px]"
-                >
-                    📞 Tap to Call Calgary
-                </a>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mb-3">
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
+                    {/* Edmonton */}
+                    <div className="flex flex-col items-center text-center w-full sm:w-[240px]">
+                        <a
+                            href="tel:780-270-1761"
+                            className="w-full bg-green-600 hover:bg-green-700 transition-colors text-white px-5 py-3 rounded-full font-semibold text-base shadow-sm"
+                        >
+                            📞 Tap to Call Edmonton
+                        </a>
+                        <p className="mt-2 text-sm text-primary tracking-wide">780-270-1761</p>
+                    </div>
+
+                    {/* Calgary */}
+                    <div className="flex flex-col items-center text-center w-full sm:w-[240px]">
+                        <a
+                            href="tel:780-270-1761"
+                            className="w-full bg-green-600 hover:bg-green-700 transition-colors text-white px-5 py-3 rounded-full font-semibold text-base shadow-sm"
+                        >
+                            📞 Tap to Call Calgary
+                        </a>
+                        <p className="mt-2 text-sm text-primary tracking-wide">780-270-1761</p>
+                    </div>
+                </div>
+
             </div>
+
             <p className="text-center mb-6">
                 Thank you for considering us as your moving partner. Please <strong>complete the form below</strong> with as much detail as possible.
             </p>
