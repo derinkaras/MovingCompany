@@ -1,6 +1,7 @@
 import React from 'react';
 import images from '../../constants/images';
 import { CheckCircle, Users, DollarSign } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const About = () => {
     return (
