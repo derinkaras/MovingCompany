@@ -75,7 +75,7 @@ const Home = () => {
             {/* Features Section */}
             <div
                 ref={featuresRef}
-                className={`bg-white py-10 px-6 lg: fade-up lg: ${featuresVisible ? 'visible' : ''}`}
+                className={`bg-white py-10 px-6`}
             >
 
                 <div className="text-center mb-12">
@@ -119,7 +119,7 @@ const Home = () => {
                     ].map(({ title, desc, icon }, idx) => (
                         <div
                             key={idx}
-                            className={`lg: fade-up bg-background-secondary p-6 rounded-lg shadow-lg text-center flex flex-col items-center justify-center ${featuresVisible ? 'visible' : ''}`}
+                            className={`bg-background-secondary p-6 rounded-lg shadow-lg text-center flex flex-col items-center justify-center ${featuresVisible ? 'visible' : ''}`}
                             style={{ animationDelay: `${idx * 0.15}s`, animationFillMode: "forwards" }}
                         >
                             <img src = {icon} className="size-24 mb-4" />
