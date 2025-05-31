@@ -66,7 +66,7 @@ const Home = () => {
                 </h2>
 
                 <p className="mt-6 max-w-3xl mx-auto text-lg text-gray-600">
-                    With years of hands-on experience and thousands of successful moves, MovingBucks has built a reputation for reliability, professionalism, and unbeatable value. Whether you’re relocating within your city, across provinces, or anywhere in North America, we make the process smooth, affordable, and stress-free — starting from Edmonton and Calgary.
+                    With years of hands-on experience and hundreds of successful moves, MovingBucks has built a reputation for reliability, professionalism, and unbeatable value. Whether you’re relocating within your city, across provinces, or anywhere in North America, we make the process smooth, affordable, and stress-free — starting from Edmonton and Calgary.
                 </p>
             </div>
             <div className="mb-6">
@@ -145,9 +145,9 @@ const Home = () => {
 
                 <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-10 text-center">
                     {[
-                        { value: "450+", label: "Happy Customers" },
-                        { value: "25+", label: "Local Business Partners" },
-                        { value: "600+", label: "Moves Completed" },
+                        { value: "450", label: "Happy Customers" },
+                        { value: "25", label: "Local Business Partners" },
+                        { value: "600", label: "Moves Completed" },
                         { value: "2", label: "Years in Business" }
                     ].map(({ value, label }, idx) => (
                         <div key={idx} className="fade-up visible">
