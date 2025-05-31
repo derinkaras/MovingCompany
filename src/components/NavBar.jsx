@@ -35,7 +35,7 @@ const NavBar = () => {
                 {/* Right side: Login + CTA */}
                 <div className="hidden md:flex items-center gap-4">
                     <Link to="/login" className="flex items-center gap-2 text-gray-700 font-medium hover:text-primary">
-                        <LogIn size={18} /> Login
+                        <LogIn size={18} /> Admin Login
                     </Link>
                     <Link
                         to="/Quote"
@@ -69,7 +69,7 @@ const NavBar = () => {
                         onClick={() => setIsOpen(false)}
                         className="flex items-center gap-2 text-gray-700 font-medium hover:text-primary"
                     >
-                        <LogIn size={18} /> Login
+                        <LogIn size={18} /> Admin Login
                     </Link>
                     <Link
                         to="/Quote"
