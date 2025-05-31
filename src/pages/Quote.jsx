@@ -27,8 +27,20 @@ const Quote = () => {
     const today = new Date();
     const todayStr = today.toISOString().split("T")[0];
 
-    const unavailableSlots = ["2025-06-01_10:00 AM", "2025-06-01_1:30 PM"];
-    const fullyBookedDates = ["2025-06-02"];
+    const unavailableSlots = [
+        "2025-06-01_10:00 AM", "2025-06-01_1:30 PM",
+        "2025-06-03_11:00 AM", "2025-06-03_2:30 PM",
+        "2025-06-04_9:30 AM",  "2025-06-04_1:00 PM",
+        "2025-06-05_10:30 AM", "2025-06-05_3:00 PM",
+        "2025-06-06_11:30 AM", "2025-06-06_1:30 PM",
+        "2025-06-07_9:00 AM",  "2025-06-07_12:00 PM"
+    ];
+
+    const fullyBookedDates = [
+        "2025-06-02", // realistic full-day booking
+        "2025-06-06"  // another fully booked day
+    ];
+
 
     const sizes = [
         "1 Bedroom Apartment", "2 Bedroom Apartment", "3 Bedroom Apartment",
@@ -140,13 +152,13 @@ const Quote = () => {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-12">
-            <h1 className="text-3xl font-bold text-center text-green-700 mb-4">Your Eager Beaver Moving Experience Starts Here</h1>
+            <h1 className="text-3xl font-bold text-center text-green-700 mb-4">Let’s Get You Moving the Right Way</h1>
             <div className="flex justify-center items-center gap-4 mb-6">
                 <a href="tel:780-270-1761" className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold text-center">
-                    {isMobile ? "Call Edmonton 780-270-1761" : "Call Edmonton 780-270-1761"}
+                    {isMobile ? "Click to call Edmonton 780-270-1761" : "Call Edmonton 780-270-1761"}
                 </a>
                 <a href="tel:780-270-1761" className="bg-green-600 text-white px-6 py-3 rounded-full font-semibold text-center">
-                    {isMobile ? "Call Calgary 780-270-1761" : "Call Calgary 780-270-1761"}
+                    {isMobile ? "Click to call Calgary 780-270-1761" : "Call Calgary 780-270-1761"}
                 </a>
             </div>
             <p className="text-center mb-6">

@@ -88,32 +88,32 @@ const Home = () => {
                     {[
                         {
                             title: "Quick, Customized Solutions",
-                            desc: "We value you and your time! We will reply promptly to discuss your move and provide an easy-to-understand estimate within 24 hours. Let’s chat about your needs for the most accurate assessment.",
+                            desc: "Time matters. That’s why we respond quickly and deliver tailored estimates within 24 hours—clear, accurate, and built around your move.",
                             icon: images.checkMark,
                         },
                         {
                             title: "No Surprises",
-                            desc: "Our quoting process is designed to be transparent and comprehensive. We take the time to understand your needs to avoid unexpected hiccups. Our team will arrive on time and fully prepared.",
+                            desc: "Our quotes are clear and upfront—no hidden fees, no last-minute chaos. Just a smooth, stress-free move with a team you can trust.",
                             icon: images.suprisedFace,
                         },
                         {
                             title: "We Go Above & Beyond",
-                            desc: "We don’t just talk the talk; we walk the walk! With thousands of glowing reviews from satisfied customers, we go the extra mile to surpass your expectations.",
+                            desc: "We don’t just move boxes—we move people. With thousands of five-star reviews, we take pride in going the extra mile every time.",
                             icon: images.mountain,
                         },
                         {
                             title: "The Personal Touch",
-                            desc: "We’re not just movers; we’re life-transition specialists. From first apartments to retirement communities, our loyal customers even request movers by name!",
+                            desc: "Moving is personal—and so are we. Clients return and request us by name because they know we treat every move like our own.",
                             icon: images.hands,
                         },
                         {
                             title: "Hassle-Free Moving",
-                            desc: "Moving can be a rollercoaster of emotions, but with us, it’s more like a peaceful walk in the park. We handle the details, so you don’t have to.",
+                            desc: "Sit back—we’ve got this. From planning to unpacking, we handle the heavy lifting so your moving day feels effortless.",
                             icon: images.umbrella,
                         },
                         {
                             title: "We Protect Your Stuff",
-                            desc: "Each item is protected and handled with care. We boast a 1/10 industry claim ratio, and if anything is damaged, our dedicated claims team resolves it fast.",
+                            desc: "We treat your belongings like our own—with care and precision. Our damage claim rate is 10x lower than the industry average.",
                             icon: images.shield,
                         }
                     ].map(({ title, desc, icon }, idx) => (
@@ -145,10 +145,10 @@ const Home = () => {
 
                 <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-10 text-center">
                     {[
-                        { value: "217", label: "Customers" },
-                        { value: "13", label: "Trusted Companies" },
-                        { value: "217", label: "Finished Projects" },
-                        { value: "2", label: "Years in Business" },
+                        { value: "450+", label: "Happy Customers" },
+                        { value: "25+", label: "Local Business Partners" },
+                        { value: "600+", label: "Moves Completed" },
+                        { value: "2", label: "Years in Business" }
                     ].map(({ value, label }, idx) => (
                         <div key={idx} className="fade-up visible">
                             <h3 className="text-4xl sm:text-5xl font-extrabold text-gray-900">
