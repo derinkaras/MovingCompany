@@ -63,7 +63,7 @@ const NavBar = () => {
                 <div className="md:hidden mt-4 flex flex-col gap-4 text-gray-800 font-semibold">
                     <NavLink to="/Home">Home</NavLink>
                     <NavLink to="/Quote">Get a Quote</NavLink>
-                    <NavLink to="/About">About</NavLink>
+                    <NavLink to="/About">About Us</NavLink>
                     <Link to="/login" className="flex items-center gap-2 text-gray-700 font-medium hover:text-primary">
                         <LogIn size={18} /> Login
                     </Link>
