@@ -74,9 +74,14 @@ const Quote = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
         setFormSubmitted(true);
+
+        // Give time for the page layout to update before scrolling
+        setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 100); // 100ms is usually enough
     };
+
 
     const handleFirebaseSubmit = async () => {
         try {
