@@ -1,54 +1,79 @@
 import React from 'react';
 import images from '../../constants/images';
+import { CheckCircle, Users, DollarSign } from 'lucide-react';
 
 const About = () => {
     return (
         <div className="bg-white text-gray-800">
-            <div className="max-w-5xl mx-auto px-6 py-16">
-                <h1 className="text-4xl font-bold text-center text-green-700 mb-8">About MovingBucks</h1>
+            <div className="max-w-7xl mx-auto px-6 py-20">
+                {/* Header */}
+                <h1 className="text-5xl font-bold text-center text-green-700 mb-6 tracking-tight">
+                    About <span className="text-gray-900">MovingBucks</span>
+                </h1>
+                <p className="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-16">
+                    Alberta’s trusted choice for reliable, stress-free moving — built by people, for people.
+                </p>
 
-                <div className="text-center mb-12">
-                    <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                        At MovingBucks, we’re more than just movers — we’re your trusted relocation partners. Our mission is to make every move effortless, stress-free, and handled with care, no matter the distance.
-                    </p>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-12 items-center">
+                {/* Our Story */}
+                <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
                     <div>
-                        <h2 className="text-2xl font-semibold text-green-600 mb-4">Our Story</h2>
+                        <h2 className="text-3xl font-semibold text-green-600 mb-4">Our Story</h2>
+                        <p className="text-gray-700 leading-relaxed mb-4">
+                            MovingBucks began with a mission: to eliminate the stress and surprises from moving. Tired of outdated service and unreliable companies, we launched a people-first business focused on care, communication, and consistency.
+                        </p>
                         <p className="text-gray-700 leading-relaxed">
-                            MovingBucks was founded by a group of young, energetic professionals with one goal: to disrupt the moving industry with unbeatable service, modern tools, and a people-first approach. What started as a local operation has grown into a regional leader in smart, reliable moving services.
+                            From humble beginnings in Edmonton to serving across Alberta, we’ve grown by earning trust, job after job. Our crew is sharp, efficient, and trained to handle every move with professionalism and precision.
                         </p>
                     </div>
-                    <img src={images.companyImg1} alt="Our Team" className="w-full rounded-xl shadow-lg" />
+                    <img
+                        src={images.teamPhoto}
+                        alt="MovingBucks Team"
+                        className="w-full rounded-2xl shadow-lg object-cover"
+                    />
                 </div>
 
-                <div className="mt-16 grid md:grid-cols-3 gap-8 text-center">
-                    {[
-                        {
-                            title: "Reliable Service",
-                            desc: "Our team shows up on time, communicates clearly, and handles your belongings with care."
-                        },
-                        {
-                            title: "Transparent Pricing",
-                            desc: "No hidden fees. Just honest quotes that make budgeting your move easy and fair."
-                        },
-                        {
-                            title: "Customer First",
-                            desc: "We're dedicated to making your move seamless. From first call to final unload, we’ve got your back."
-                        }
-                    ].map((item, idx) => (
-                        <div key={idx} className="p-6 border rounded-lg shadow hover:shadow-md transition">
-                            <h3 className="text-xl font-semibold text-green-700 mb-2">{item.title}</h3>
-                            <p className="text-gray-600 text-sm">{item.desc}</p>
-                        </div>
-                    ))}
+                {/* Why Choose Us */}
+                <div className="mb-24">
+                    <h2 className="text-3xl font-semibold text-green-600 text-center mb-10">Why Choose Us</h2>
+                    <div className="grid md:grid-cols-3 gap-8 text-center">
+                        {[
+                            {
+                                icon: <CheckCircle className="w-8 h-8 mx-auto text-green-600 mb-4" />,
+                                title: "Reliable Service",
+                                desc: "We show up on time, fully equipped, and ready to get the job done — the right way."
+                            },
+                            {
+                                icon: <DollarSign className="w-8 h-8 mx-auto text-green-600 mb-4" />,
+                                title: "Upfront Pricing",
+                                desc: "We believe in clear, honest estimates with no hidden fees or surprise charges."
+                            },
+                            {
+                                icon: <Users className="w-8 h-8 mx-auto text-green-600 mb-4" />,
+                                title: "People-First Approach",
+                                desc: "You’re not just another client. We treat your move with the same care as our own."
+                            }
+                        ].map((item, idx) => (
+                            <div key={idx} className="p-6 bg-gray-50 border rounded-xl shadow hover:shadow-md transition">
+                                {item.icon}
+                                <h3 className="text-xl font-semibold text-green-700 mb-2">{item.title}</h3>
+                                <p className="text-gray-600 text-sm">{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
-                <div className="mt-20 bg-green-100 p-8 rounded-xl text-center shadow">
-                    <h2 className="text-2xl font-bold text-green-700 mb-2">Let’s Make Your Move Simple</h2>
-                    <p className="text-gray-700 mb-4">Contact our team today for a free estimate and discover how stress-free moving can really be.</p>
-                    <a href="/Quote" className="inline-block bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition">
+                {/* CTA Section */}
+                <div className="bg-green-50 p-10 md:p-14 rounded-2xl text-center shadow-lg">
+                    <h2 className="text-3xl font-bold text-green-700 mb-4">
+                        Let’s Make Your Move the Easiest One Yet
+                    </h2>
+                    <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+                        Contact our friendly team for a free, no-obligation quote. Whether it's a local move or long-distance, MovingBucks is here to handle it with care and confidence.
+                    </p>
+                    <a
+                        href="/Quote"
+                        className="inline-block bg-green-600 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-green-700 transition"
+                    >
                         Get Your Quote
                     </a>
                 </div>

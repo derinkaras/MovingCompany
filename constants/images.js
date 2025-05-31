@@ -19,6 +19,9 @@ import inAction7 from '../src/assets/inAction7.png';
 import inAction8 from '../src/assets/inAction8.png';
 import inAction9 from '../src/assets/inAction9.png';
 import inAction10 from '../src/assets/inAction10.png';
+import inAction11 from '../src/assets/inAction11.png';
+import inAction12 from '../src/assets/inAction12.png';
+import teamPhoto from '../src/assets/teamPhoto.png';
 
 const images = {
     hero,
@@ -30,10 +33,35 @@ const images = {
     hands,
     umbrella,
     shield,
-    gallery: [inAction4, inAction1, inAction7, inAction3, inAction5, inAction6, inAction2, inAction8, inAction9, inAction10],
     companyImg1,
     successIcon,
-    inAction7
+    gallery: [
+        inAction1,
+        inAction2,
+        inAction3,
+        inAction4,
+        inAction5,
+        inAction6,
+        inAction7,
+        inAction8,
+        inAction9,
+        inAction10,
+        inAction11,
+        inAction12
+    ],
+
+    inAction1,
+    inAction2,
+    inAction3,
+    inAction4,
+    inAction5,
+    inAction6,
+    inAction7,
+    inAction8,
+    inAction9,
+    inAction10,
+
+    teamPhoto
 };
 
 export default images;
