@@ -130,7 +130,7 @@ const Quote = () => {
 
     if (firebaseSubmitted) {
         return (
-            <div className="flex flex-col items-center justify-center py-20 text-center max-w-xl mx-auto mx-5">
+            <div className="flex flex-col items-center justify-center py-20 text-center max-w-xl mx-10">
                 <img src={images.successIcon} className="w-20 h-20 mb-4" alt="Success" />
                 <h2 className="text-2xl font-bold text-green-500 mb-2">Submitted Successfully</h2>
                 <p className="text-gray-700">Thank you! Your quote request is now in our system and we will be in contact with you shortly.</p>
