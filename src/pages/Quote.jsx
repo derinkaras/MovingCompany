@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import images from "../../constants/images.js";
 import {submitQuoteToFirestore} from "../utils/firebaseUtils.js";
+import {trackEvent} from "../utils/metaPixel.js";
 
 const Quote = () => {
     const [formSubmitted, setFormSubmitted] = useState(false);
@@ -88,6 +89,7 @@ const Quote = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        trackEvent('Lead'); // <- Facebook standard event
         setFormSubmitted(true);
 
         // Give time for the page layout to update before scrolling
