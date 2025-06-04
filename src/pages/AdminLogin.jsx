@@ -34,10 +34,10 @@ const AdminLogin = () => {
     if (isAdmin) return <QuotesList />;
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-200 px-4 relative">
+        <div className="flex items-center justify-center min-h-screen bg-gray-200 px-4 py-10 overflow-y-auto">
             <form
                 onSubmit={handleLogin}
-                className="w-full max-w-md bg-white rounded-lg border border-gray-200 shadow-lg px-8 py-10 space-y-5"
+                className="w-full max-w-md bg-white rounded-lg border border-gray-200 shadow-lg px-6 py-8 space-y-5"
             >
                 <h2 className="text-2xl font-bold text-center text-green-700">
                     Admin Login
