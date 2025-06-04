@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import images from "../../constants/images.js";
+import {submitQuoteToFirestore} from "../utils/firebaseUtils.js";
 
 const Quote = () => {
     const [formSubmitted, setFormSubmitted] = useState(false);
@@ -84,6 +85,7 @@ const Quote = () => {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormSubmitted(true);
@@ -97,14 +99,14 @@ const Quote = () => {
 
     const handleFirebaseSubmit = async () => {
         try {
-            // const { bookQuoteMeeting } = await import("../../firebase");
-            // await bookQuoteMeeting({ ...formData });
+            await submitQuoteToFirestore(formData);
             setFirebaseSubmitted(true);
             console.log("Submitted to Firebase:", formData);
         } catch (err) {
             console.error("Firebase update failed", err);
         }
     };
+
 
     if (formSubmitted && !firebaseSubmitted) {
         return (
@@ -142,7 +144,7 @@ const Quote = () => {
 
     if (firebaseSubmitted) {
         return (
-            <div className="flex flex-col items-center justify-center py-20 text-center max-w-xl mx-10">
+            <div className="flex flex-col items-center justify-center py-20 text-center mx-10">
                 <img src={images.successIcon} className="w-20 h-20 mb-4" alt="Success" />
                 <h2 className="text-2xl font-bold text-green-500 mb-2">Submitted Successfully</h2>
                 <p className="text-gray-700">Thank you! Your quote request is now in our system and we will be in contact with you shortly.</p>

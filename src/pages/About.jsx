@@ -8,7 +8,7 @@ const About = () => {
         <div className="bg-white text-gray-800">
             <div className="max-w-7xl mx-auto px-6 py-20">
                 {/* Header */}
-                <h1 className="text-5xl font-bold text-center text-green-700 mb-6 tracking-tight">
+                <h1 className="text-5xl font-bold text-center text-button mb-6 tracking-tight">
                     About <span className="text-gray-900">MovingBucks</span>
                 </h1>
                 <p className="text-center text-gray-600 text-lg max-w-2xl mx-auto mb-16">

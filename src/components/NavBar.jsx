@@ -15,7 +15,7 @@ const NavBar = () => {
                 <div className="flex items-center gap-10">
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-3">
-                        <div className="p-[6px] bg-green-100 rounded-full">
+                        <div>
                             <img src={images.buck} alt="MovingBucks logo" className="h-8 w-8" />
                         </div>
                         <span className="font-semibold text-3xl tracking-tight text-gray-900">
@@ -34,7 +34,7 @@ const NavBar = () => {
 
                 {/* Right side: Login + CTA */}
                 <div className="hidden md:flex items-center gap-4">
-                    <Link to="/login" className="flex items-center gap-2 text-gray-700 font-medium hover:text-primary">
+                    <Link to="/AdminLogin" className="flex items-center gap-2 text-gray-700 font-medium hover:text-primary">
                         <LogIn size={18} /> Admin Login
                     </Link>
                     <Link

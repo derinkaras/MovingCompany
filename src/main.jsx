@@ -8,7 +8,8 @@ import Quote from "./pages/Quote.jsx";
 import About from "./pages/About.jsx";
 import NavBar from "./components/NavBar.jsx";
 import Footer from "./components/Footer.jsx";
-import ScrollToTop from "./components/ScrollToTop.jsx"; // 👈 import this
+import ScrollToTop from "./components/ScrollToTop.jsx";
+import AdminLogin from "./pages/AdminLogin.jsx";
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')).render(
                         <Route path="/Home" element={<Home />} />
                         <Route path="/Quote" element={<Quote />} />
                         <Route path="/About" element={<About />} />
+                        <Route path="/AdminLogin" element={<AdminLogin/>}/>
                     </Routes>
                 </div>
                 <Footer />
