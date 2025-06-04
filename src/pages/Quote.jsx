@@ -89,7 +89,6 @@ const Quote = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        trackEvent('Lead'); // <- Facebook standard event
         setFormSubmitted(true);
 
         // Give time for the page layout to update before scrolling
@@ -102,6 +101,7 @@ const Quote = () => {
     const handleFirebaseSubmit = async () => {
         try {
             await submitQuoteToFirestore(formData);
+            trackEvent('Lead'); // <- Facebook standard event
             setFirebaseSubmitted(true);
             console.log("Submitted to Firebase:", formData);
         } catch (err) {
