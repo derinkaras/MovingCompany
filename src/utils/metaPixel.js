@@ -1,6 +1,6 @@
 import ReactPixel from 'react-facebook-pixel';
 
-const pixelId = '583798697671330';
+const pixelId = '1020546873392429';
 
 const options = {
     autoConfig: true,
