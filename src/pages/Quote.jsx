@@ -170,16 +170,17 @@ const Quote = () => {
                         <p className="mt-2 text-sm text-primary tracking-wide">780-907-8727</p>
                     </div>
 
-                    {/* Calgary */}
-                    <div className="flex flex-col items-center text-center w-full sm:w-[240px]">
-                        <a
-                            href="tel:780-907-8727"
-                            className="w-full bg-green-600 hover:bg-green-700 transition-colors text-white px-5 py-3 rounded-full font-semibold text-base shadow-sm"
-                        >
-                            📞 Tap to Call Calgary
-                        </a>
-                        <p className="mt-2 text-sm text-primary tracking-wide">780-907-8727</p>
-                    </div>
+                    {/*/!* Calgary *!/*/}
+                    {/*<div className="flex flex-col items-center text-center w-full sm:w-[240px]">*/}
+                    {/*    <a*/}
+                    {/*        href="tel:780-907-8727"*/}
+                    {/*        className="w-full bg-green-600 hover:bg-green-700 transition-colors text-white px-5 py-3 rounded-full font-semibold text-base shadow-sm"*/}
+                    {/*    >*/}
+                    {/*        📞 Tap to Call Calgary*/}
+                    {/*    </a>*/}
+                    {/*    <p className="mt-2 text-sm text-primary tracking-wide">780-907-8727</p>*/}
+                    {/*</div>*/}
+
                 </div>
 
             </div>
