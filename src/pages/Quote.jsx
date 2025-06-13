@@ -225,8 +225,22 @@ const Quote = () => {
                     <textarea name="notes" rows={4} value={formData.notes} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-xl"></textarea>
                 </div>
 
+
+                <div className="flex justify-between items-center mb-2">
+                    <label className="block font-medium text-gray-700">Schedule a Call (Optional)</label>
+                    {formData.callTime && (
+                        <button
+                            type="button"
+                            onClick={() => setFormData(prev => ({ ...prev, callTime: "" }))}
+                            className="text-xs bg-red-100 text-red-700 px-3 py-1 rounded-full hover:bg-red-200 transition"
+                        >
+                            ❌ Deselect
+                        </button>
+                    )}
+                </div>
+
+
                 <div>
-                    <label className="block font-medium text-gray-700 mb-2">Schedule a Call (Optional)</label>
                     <div className="grid grid-cols-3 gap-3 max-h-[300px] overflow-y-auto border p-2 rounded-xl">
                         {callSlots.map(({ key, label, date, filled }) => {
                             const selected = formData.callTime === key;
