@@ -105,9 +105,9 @@ const Quote = () => {
 
     if (formSubmitted && !firebaseSubmitted) {
         return (
-            <div className="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8 mt-10">
-                <h2 className="text-2xl font-bold text-green-600 mb-4">Confirm Your Information</h2>
-                <p className="mb-6 text-gray-700">Please review your contact information before final submission:</p>
+            <div className="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8 my-10">
+                <h2 className="text-2xl font-bold text-green-600 mb-4 text-center">Confirm Your Information</h2>
+                <p className="mb-6 text-gray-700 text-center">Please review your contact information before final submission:</p>
                 <div className="bg-gray-50 p-4 rounded-md text-sm mb-4">
                     <p><strong>Email:</strong> {formData.email || "—"}</p>
                     <p><strong>Phone:</strong> {formData.phoneNumber || "—"} ({formData.phoneType || "N/A"})</p>
@@ -117,7 +117,7 @@ const Quote = () => {
                         <p><strong>Scheduled Call:</strong> Not selected</p>
                     )}
                 </div>
-                <div className="flex justify-end gap-4">
+                <div className="flex justify-center gap-4">
                     <button onClick={() => setFormSubmitted(false)} className="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 font-semibold">
                         Edit
                     </button>
