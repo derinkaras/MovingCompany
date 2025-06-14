@@ -60,14 +60,14 @@ const NavBar = () => {
 
             {/* Mobile Dropdown */}
             {isOpen && (
-                <div className="md:hidden mt-4 flex flex-col gap-4 text-gray-800 font-semibold">
+                <div className="md:hidden mt-4 flex flex-col gap-4 text-gray-800">
                     <NavLink to="/Home" onClick={() => setIsOpen(false)}>Home</NavLink>
                     <NavLink to="/Quote" onClick={() => setIsOpen(false)}>Get a Quote</NavLink>
                     <NavLink to="/About" onClick={() => setIsOpen(false)}>About Us</NavLink>
                     <Link
                         to="/AdminLogin"
                         onClick={() => setIsOpen(false)}
-                        className="flex items-center gap-2 text-gray-700 font-medium hover:text-primary"
+                        className="flex items-center gap-2 text-gray-700 font-medium hover:text-primary font-semibold"
                     >
                         <LogIn size={18} /> Admin Login
                     </Link>
