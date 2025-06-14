@@ -136,7 +136,7 @@ const Quote = () => {
 
     if (formSubmitted && !firebaseSubmitted) {
         return (
-            <div className="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8 my-10">
+            <div className="max-w-xl mx-auto bg-white rounded-xl p-8 my-10">
                 <h2 className="text-2xl font-bold text-green-600 mb-4 text-center">Confirm Your Information</h2>
                 <p className="mb-6 text-gray-700 text-center ">Please review your contact information before final submission:</p>
                 <div className="bg-gray-50 p-4 rounded-md text-sm mb-4">
