@@ -65,7 +65,7 @@ const NavBar = () => {
                     <NavLink to="/Quote" onClick={() => setIsOpen(false)}>Get a Quote</NavLink>
                     <NavLink to="/About" onClick={() => setIsOpen(false)}>About Us</NavLink>
                     <Link
-                        to="/login"
+                        to="/AdminLogin"
                         onClick={() => setIsOpen(false)}
                         className="flex items-center gap-2 text-gray-700 font-medium hover:text-primary"
                     >
