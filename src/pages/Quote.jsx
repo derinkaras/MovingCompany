@@ -1,9 +1,10 @@
 // Full styled and complete version of the Quote form
 
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import images from "../../constants/images.js";
 import { submitQuoteToFirestore } from "../utils/firebaseUtils.js";
 import { trackEvent } from "../utils/metaPixel.js";
+import { fetchAllOccupied } from "../utils/firebaseUtils";
 
 const Quote = () => {
     const [formSubmitted, setFormSubmitted] = useState(false);
@@ -30,16 +31,46 @@ const Quote = () => {
     const today = new Date();
     const todayStr = today.toISOString().split("T")[0];
 
-    const unavailableSlots = [
-        "2025-06-10_10:00 AM", "2025-06-10_1:30 PM",
-        "2025-06-11_9:00 AM", "2025-06-11_12:30 PM", "2025-06-11_4:00 PM",
-        "2025-06-12_10:30 AM", "2025-06-12_2:00 PM", "2025-06-12_5:00 PM",
-        "2025-06-13_8:30 AM", "2025-06-13_1:00 PM", "2025-06-13_3:30 PM",
-        "2025-06-14_9:30 AM", "2025-06-14_11:00 AM", "2025-06-14_2:30 PM",
-        "2025-06-15_10:00 AM", "2025-06-15_12:00 PM", "2025-06-15_4:30 PM",
-        "2025-06-16_9:00 AM", "2025-06-16_1:30 PM", "2025-06-16_5:00 PM",
-        "2025-06-17_11:00 AM", "2025-06-17_2:00 PM", "2025-06-17_6:00 PM"
-    ];
+    const [unavailableSlots, setUnavailableSlots] = useState([]);
+
+
+
+    useEffect(() => {
+        const loadSlots = async () => {
+            const firestoreSlots = await fetchAllOccupied();
+            console.log("THIS IS THE FIRESTORE SLOTS: ", firestoreSlots);
+
+            const manualSlots = [
+                "2025-06-10_10:00 AM", "2025-06-10_1:30 PM",
+                "2025-06-11_9:00 AM", "2025-06-11_12:30 PM", "2025-06-11_4:00 PM",
+                "2025-06-12_10:30 AM", "2025-06-12_2:00 PM", "2025-06-12_5:00 PM",
+                "2025-06-13_8:30 AM", "2025-06-13_1:00 PM", "2025-06-13_3:30 PM",
+                "2025-06-14_9:30 AM", "2025-06-14_11:00 AM", "2025-06-14_2:30 PM",
+                "2025-06-15_10:00 AM", "2025-06-15_12:00 PM", "2025-06-15_4:30 PM",
+                "2025-06-16_9:00 AM", "2025-06-16_1:30 PM", "2025-06-16_5:00 PM",
+                "2025-06-17_11:00 AM", "2025-06-17_2:00 PM", "2025-06-17_6:00 PM",
+                "2025-06-18_8:30 AM", "2025-06-18_10:30 AM", "2025-06-18_4:00 PM",
+                "2025-06-19_9:00 AM", "2025-06-19_1:00 PM", "2025-06-19_3:00 PM", "2025-06-19_5:00 PM",
+                "2025-06-20_9:30 AM", "2025-06-20_12:00 PM", "2025-06-20_2:30 PM",
+                "2025-06-21_10:00 AM", "2025-06-21_11:30 AM", "2025-06-21_3:30 PM",
+                "2025-06-22_9:00 AM", "2025-06-22_12:00 PM", "2025-06-22_4:00 PM",
+                "2025-06-23_8:30 AM", "2025-06-23_10:00 AM", "2025-06-23_1:30 PM", "2025-06-23_5:00 PM",
+                "2025-06-24_9:00 AM", "2025-06-24_11:00 AM", "2025-06-24_3:00 PM",
+                "2025-06-25_10:30 AM", "2025-06-25_12:30 PM", "2025-06-25_2:00 PM",
+                "2025-06-26_9:30 AM", "2025-06-26_11:30 AM", "2025-06-26_4:00 PM",
+                "2025-06-27_8:30 AM", "2025-06-27_1:00 PM", "2025-06-27_3:30 PM",
+                "2025-06-28_9:00 AM", "2025-06-28_10:30 AM", "2025-06-28_2:00 PM"
+            ];
+
+
+            const combined = [...new Set([...manualSlots, ...firestoreSlots])]; // no duplicates
+            setUnavailableSlots(combined);
+        };
+
+        loadSlots();
+    }, []);
+
+
 
     const fullyBookedDates = ["2025-06-02", "2025-06-06"];
 
@@ -107,7 +138,7 @@ const Quote = () => {
         return (
             <div className="max-w-xl mx-auto bg-white rounded-xl shadow-lg p-8 my-10">
                 <h2 className="text-2xl font-bold text-green-600 mb-4 text-center">Confirm Your Information</h2>
-                <p className="mb-6 text-gray-700 text-center">Please review your contact information before final submission:</p>
+                <p className="mb-6 text-gray-700 text-center ">Please review your contact information before final submission:</p>
                 <div className="bg-gray-50 p-4 rounded-md text-sm mb-4">
                     <p><strong>Email:</strong> {formData.email || "—"}</p>
                     <p><strong>Phone:</strong> {formData.phoneNumber || "—"} ({formData.phoneType || "N/A"})</p>

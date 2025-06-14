@@ -18,12 +18,28 @@ import {auth, db} from "./firebase.js";
 
 
 
+
+
+
+
 // 🔄 Get all quotes, ordered by creation date
 export const fetchAllQuotes = async () => {
     const q = query(collection(db, "quotes"), orderBy("createdAt", "desc"));
     const snapshot = await getDocs(q);
     return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 };
+
+export const fetchAllOccupied = async () => {
+    try {
+        const q = query(collection(db, "quotes"), orderBy("createdAt", "desc"));
+        const snapshot = await getDocs(q);
+        return snapshot.docs.map(doc => doc.data().callTime); // returns array of keys like "2025-06-14_2:30 PM"
+    } catch (error) {
+        console.error("Error fetching occupied slots:", error.message);
+        return [];
+    }
+};
+
 
 // 📝 Update a quote
 export const updateQuote = async (quoteId, updatedFields) => {
@@ -72,9 +88,28 @@ export const submitQuoteToFirestore = async (quoteData) => {
             ...quoteData,
             createdAt: serverTimestamp()
         });
-        console.log("Quote submitted to Firestore.");
+
+        if (quoteData.callTime) {
+            await submitOccupiedToFirestore(quoteData.callTime);
+        }
+
+        console.log("Quote and occupied time submitted.");
     } catch (error) {
         console.error("Error submitting quote:", error.message);
         throw error;
     }
 };
+
+
+export const submitOccupiedToFirestore = async (occupiedDate) => {
+    try {
+        await addDoc(collection(db, "occupiedDates"), {
+            occupiedDate, // e.g., "2025-06-14_2:30 PM"
+            createdAt: serverTimestamp()
+        });
+    } catch (error) {
+        console.error("Error submitting occupied date:", error.message);
+    }
+};
+
+
