@@ -45,17 +45,35 @@ const NavBar = () => {
                     </Link>
                 </div>
 
-                {/* Mobile Menu Icon */}
-                <button className="md:hidden" onClick={toggleMenu} aria-label="Toggle menu">
-                    {isOpen ? (
-                        <X size={28} className="text-gray-800" />
-                    ) : (
-                        <div className="flex flex-col justify-center items-center gap-[6px]">
-                            <span className="block w-6 h-[2px] bg-gray-900"></span>
-                            <span className="block w-6 h-[2px] bg-gray-900"></span>
-                        </div>
-                    )}
+                {/* Mobile Menu Icon with animation */}
+                <button
+                    className="md:hidden w-8 h-8 relative z-50 flex items-center justify-center"
+                    onClick={toggleMenu}
+                    aria-label="Toggle menu"
+                >
+                    <div className={`relative w-6 h-6 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>
+                        {/* Top Line */}
+                        <span
+                            className={`absolute left-0 top-1/2 w-full h-[2px] bg-gray-900 transition-transform duration-300 ${
+                                isOpen ? "rotate-45 translate-y-0" : "-translate-y-2"
+                            }`}
+                        />
+                        {/* Middle Line (fades out) */}
+                        <span
+                            className={`absolute left-0 top-1/2 w-full h-[2px] bg-gray-900 transition-opacity duration-200 ${
+                                isOpen ? "opacity-0" : "opacity-100"
+                            }`}
+                        />
+                        {/* Bottom Line */}
+                        <span
+                            className={`absolute left-0 top-1/2 w-full h-[2px] bg-gray-900 transition-transform duration-300 ${
+                                isOpen ? "-rotate-45 translate-y-0" : "translate-y-2"
+                            }`}
+                        />
+                    </div>
                 </button>
+
+
             </div>
 
             {/* Mobile Dropdown */}
